@@ -17,7 +17,7 @@ class Routes{
         $this->createRoute('Home','List', false);
         $this->createRoute('NovoEmpreendimento','Form', false);
         $this->createRoute('NovaUnidade','Form', false);
-
+        $this->createRoute('Empreendimento','List', false);
     }
 
     //Adiciona a rota ao array de controle e seu template

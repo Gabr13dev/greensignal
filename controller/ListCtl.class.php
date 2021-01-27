@@ -20,7 +20,22 @@ class ListCtl extends Controller
 		$data['emp'] = $this->model->getEmpreendimentos();
 		$data['msg'] = $this->getMessageHome();
 		$data['to'] = $this;
+		return $data;
+	}
+
+	public function Empreendimento(){
+		//Verifica se o empreendimento existe
 		$data['ctl'] = $this->ctl;
+		$select = $this->model->getEmpreendimentoById($this->routes->getParameter(2));
+		if(!$select){
+			//Redireciona caso não encontre
+			echo "<script>window.location.href = '" . URL . "/Home/empNotFound';</script>";
+		}
+		$data['emp'] = $select[0];
+		$data['resp'] = $this->model->getNameRespTec($data['emp']['id_responsaveltecnico_empreendimento']);
+		$data['unity'] = $this->model->getAllUnidadesForBuild($this->routes->getParameter(2));
+		$data['numberUnity'] = $this->getQtdeUnity($this->routes->getParameter(2));
+		$data['mapslink'] = $this->ctl->getMapsLink($data['emp']['endereco_empreendimento'] .", ". $data['emp']['numero_empreendimento']." - ".$data['emp']['bairro_empreendimento'].", ".$data['emp']['cidade_empreendimento']. " - ".  $data['emp']['estado_empreendimento']);
 		return $data;
 	}
 
@@ -42,6 +57,9 @@ class ListCtl extends Controller
 		switch ($this->routes->getParameter(2)) {
 			case 'SuccessNew':
 				return $this->ctl->getTemplateMessage("Empreendimento cadastrado!","success");
+				break;
+			case 'empNotFound':
+				return $this->ctl->getTemplateMessage("Empreendimento não encontrado!","fail");
 				break;
 			case 'ErrorInsert':
 				return $this->ctl->getTemplateMessage("Não foi possivel realizar o cadastro.","fail");

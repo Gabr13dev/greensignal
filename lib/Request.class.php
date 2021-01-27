@@ -62,7 +62,7 @@ class Request
             $arrData[2] = $this->local['areatotal-und'];
             $arrData[3] = $this->local['areapriv-und'];
             $arrData[4] = $this->local['areacob-und'];
-            $arrData[5] = $this->local['cobertura-und'] == "on" ? 1 : 0;
+            $arrData[5] = $this->local['cobertura-und'] == "true" ? 1 : 0;
             $arrData[6] = $this->formatDouble($this->local['valorvenda-und']);
             $arrData[7] = $this->formatDouble($this->local['valoravalia-und']);
             $insert = $this->Mod->insertDataEncapsule("INSERT INTO `unidade`(`id_unidade`, `id_empreendimento_unidade`, `numero_unidade`, `areatotal_unidade`, `areaprivativa_unidade`, `areacoberta_unidade`, `cobertura_unidade`, `valorvenda_unidade`, `valoravaliacaobanco_unidade`) VALUES (NULL,?,?,?,?,?,?,?,?);", $arrData);

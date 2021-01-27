@@ -14,6 +14,9 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            <img alt="image-default" width="100%" src="<?= URL ?>/images/default_unity.jpg" />
+                        </div>
+                        <div class="card-footer">
                             <form method="POST" action="<?= URL ?>/request/addNewUnity">
                                 <div class="form-group">
                                     <label>Empreendimento</label>
@@ -43,9 +46,10 @@
                                 <div class="form-group">
                                     <label>Cobertura</label><br>
                                     <label class="custom-toggle">
-                                        <input type="checkbox" id="cobertura-und" name="cobertura-und" checked="false">
+                                        <input type="checkbox" id="fake-cobertura-und" name="fake-cobertura-und" >
                                         <span class="custom-toggle-slider rounded-circle"></span>
                                     </label>
+                                    <input type="text" id="cobertura-und" name="cobertura-und" class="hidden">
                                 </div>
                                 <div class="form-group">
                                     <label>Valor de Venda</label>
@@ -71,4 +75,8 @@
     $('.money').mask('000.000.000.000.000,00', {
         reverse: true
     });
+
+    $("#fake-cobertura-und").on("change",function(){
+        $("#cobertura-und").val($("#fake-cobertura-und").prop("checked"))
+    })
 </script>

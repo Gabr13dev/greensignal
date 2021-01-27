@@ -23,6 +23,24 @@
                 <span class="nav-link-text">Cadastrar Unidades</span>
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?=URL?>/Cliente">
+                <i class="fa fa-bed text-dark"></i>
+                <span class="nav-link-text">Cliente</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?=URL?>/Vendedores">
+                <i class="fa fa-bed text-dark"></i>
+                <span class="nav-link-text">Vendedores</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?=URL?>/Responsavel">
+                <i class="fa fa-bed text-dark"></i>
+                <span class="nav-link-text">Responsavel Tecnico</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
