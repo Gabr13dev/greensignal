@@ -1,0 +1,45 @@
+body{
+    background-color: #172b4d !important;
+}
+
+.link-attention{
+    color: #be6314 !important;
+    cursor: pointer;
+}
+
+.link-attention:hover{
+    color: #462d17 !important;
+}
+
+.nav-active{
+    border-top: solid 0.1rem #1c3051;
+    border-bottom: solid 0.1rem #1c3051;
+    padding-left: 8px;
+}
+
+.nav-link:hover{
+    color: #be6314 !important;
+}
+
+.input-join {
+    margin-left: 15px;
+}
+
+.input-join {
+    margin-left: 15px;
+}
+
+.input-after-join {
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.row-form {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.fa-hover:hover{
+    color: #be6314 !important;
+    cursor: pointer;
+}
