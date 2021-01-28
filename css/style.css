@@ -106,3 +106,60 @@ body{
     opacity: 1 !important;
     background-color: rgba(0,0,0,0.4) !important;
 }
+
+.ctl{
+    color: #be6314;
+}
+
+.ctl:hover{
+    color: #616161;
+    cursor: pointer;
+}
+
+#menu-btn{
+    font-family: 'Roboto', sans-serif;
+    position: fixed;
+    top: 20px;
+    z-index: 1000;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: none;
+    padding: 10px 13px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, .5);
+    background-color: #446eb2;
+    box-shadow: 0 0 15px 0 rgba(0, 0, 0, .2);
+    -webkit-transition: all 300ms ease-in;
+    transition: all 0.7s ease-in;
+    color: #ededed;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 17.5%;
+    border-radius: 5px;
+}
+
+@media(max-width: 520px){
+    #app{
+        margin-left: 9%;
+    }
+    #menu-btn{
+        display: flex;
+    }
+}
+
+.ativo{
+    background-color: #d8e2f3;
+    border-radius: 5%;
+}

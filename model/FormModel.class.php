@@ -23,6 +23,18 @@ class FormModel extends Model
 		$sql = "SELECT * FROM empreendimento;";
 		return $this->Model->getData($sql);
 	}
+
+	//Obtem todos clientes cadastrados
+	public function getAllClients(){
+		$sql = "SELECT * FROM cliente;";
+		return $this->Model->getData($sql);
+	}
+
+	//Obtem todos os vendedores
+	public function getAllSalesMan(){
+		$sql = "SELECT * FROM vendedor";
+		return $this->Model->getData($sql);
+	}
 	
 
 }

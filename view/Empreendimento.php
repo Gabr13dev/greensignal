@@ -65,7 +65,7 @@
                     </div>
                     <div class="col-md-6 text-center">
                         <div class="col-md-12">
-                            <h1 class="text-primary-custom">Nenhum unidade cadastrado</h1>
+                            <h1 class="text-primary-custom">Nenhuma unidade cadastrado</h1>
                         </div>
                     </div>
                 <?php } ?>

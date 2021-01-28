@@ -76,6 +76,98 @@ class Request
         }
     }
 
+    //Adiciona um novo Vendedor
+    private function addNewSells(){
+        if (!empty($this->local)){
+            $arrData[0] = $this->local['nome-vend'];
+            $insert = $this->Mod->insertDataEncapsule("INSERT INTO `vendedor`(`id_vendedor`, `nome_vendedor`) VALUES (NULL,?)", $arrData);
+            if ($insert) {
+                $this->redirectTo("Vendedores/SuccessNew");
+            } else {
+                $this->redirectTo("Vendedores/ErrorNew");
+            }
+        } else {
+            $this->redirectTo("Vendedores/ErrorInsert");
+        }
+    }
+
+    //Adiciona um novo Cliente
+    private function addNewClient(){
+        if (!empty($this->local)){
+            $arrData[0] = $this->local['nome-cliente'];
+            $insert = $this->Mod->insertDataEncapsule("INSERT INTO `cliente`(`id_cliente`, `nome_cliente`) VALUES (NULL,?)", $arrData);
+            if ($insert) {
+                $this->redirectTo("Cliente/SuccessNew");
+            } else {
+                $this->redirectTo("Cliente/ErrorNew");
+            }
+        } else {
+            $this->redirectTo("Cliente/ErrorInsert");
+        }
+    }
+
+    //Adiciona um novo Responsavel Tecnico
+    private function addNewResp(){
+        if (!empty($this->local)){
+            $arrData[0] = $this->local['nome-resp'];
+            $insert = $this->Mod->insertDataEncapsule("INSERT INTO `responsavel_tecnico`(`id_responsaveltecnico`, `nome_responsaveltecnico`) VALUES (NULL,?)", $arrData);
+            if ($insert) {
+                $this->redirectTo("Responsavel/SuccessNew");
+            } else {
+                $this->redirectTo("Responsavel/ErrorNew");
+            }
+        } else {
+            $this->redirectTo("Responsavel/ErrorInsert");
+        }
+    }
+
+      //Deleta o Responsavel Tecnico
+      private function deleteResp(){
+        if (!empty($this->local)){
+            $arrData[0] = $this->local['id-input'];
+            $insert = $this->Mod->insertDataEncapsule("DELETE FROM responsavel_tecnico WHERE id_responsaveltecnico = ?;", $arrData);
+            if ($insert) {
+                $this->redirectTo("Responsavel/SuccessDelete");
+            } else {
+                $this->redirectTo("Responsavel/ErrorDelete");
+            }
+        } else {
+            $this->redirectTo("Responsavel/Error");
+        }
+    }
+
+     //Deleta o Responsavel Tecnico
+     private function deleteClient(){
+        if (!empty($this->local)){
+            $arrData[0] = $this->local['id-input'];
+            $insert = $this->Mod->insertDataEncapsule("DELETE FROM cliente WHERE id_cliente = ?", $arrData);
+            if ($insert) {
+                $this->redirectTo("Cliente/SuccessDelete");
+            } else {
+                $this->redirectTo("Cliente/ErrorDelete");
+            }
+        } else {
+            $this->redirectTo("Cliente/Error");
+        }
+    }
+
+     //Deleta o Responsavel Tecnico
+     private function deleteSells(){
+        if (!empty($this->local)){
+            $arrData[0] = $this->local['id-input'];
+            $insert = $this->Mod->insertDataEncapsule("DELETE FROM vendedor WHERE id_vendedor = ?", $arrData);
+            if ($insert) {
+                $this->redirectTo("Vendedores/SuccessDelete");
+            } else {
+                $this->redirectTo("Vendedores/ErrorDelete");
+            }
+        } else {
+            $this->redirectTo("Vendedores/Error");
+        }
+    }
+
+
+
     //Formata valor decimal para o Mysql
     private function formatDouble($value){
         return number_format(str_replace(",",".",str_replace(".","",$value)), 2, '.', '');
